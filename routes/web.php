@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController as userController;
+use App\Http\Controllers\AuthController as authController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::post('/auth/login', [authController::class, 'login']);
+//
+//Route::resource('/user', 'UserController')->middleware(['auth:sanctum']);
