@@ -22,4 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/auth/login', [authController::class, 'login']);
 
+Route::post('/auth/signup', [authController::class, 'signup']);
+
 Route::resource('/user', 'UserController')->middleware(['auth:sanctum']);

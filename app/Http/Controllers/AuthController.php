@@ -9,6 +9,34 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+
+    /**
+     * Signup for users
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function signup (Request $request): JsonResponse
+    {
+        $validator = $this->validate($request, [
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string',
+            'username' => 'required|string'
+        ]);
+        if ($validator->fails()) {
+            return response()->json($this->badRequest($validator->errors()));
+        }
+        $user = User::create([
+            'name'=>$request->input('username'),
+            'email'=>$request->input('email'),
+            'password'=>$request->input('password')
+        ]);
+        if ($user) {
+            return response()->json($this->baseResponse($user));
+        }
+        return response()->json($this->badRequest([]));
+    }
+
     /**
      * Login for users
      *
@@ -24,8 +52,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json($this->badRequest($validator->errors()));
         }
-        $requestData = $request->only(User::$loginData);
-        $user = User::firstWhere('email', $requestData->email);
+        $user = User::firstWhere('email', $request->input('email'));
         if ($user) {
             if (Hash::check($request->input('password'), $user->password)) {
                 $d = [
