@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[ADD] Register service">
+    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[UPD] Services">
+      <change beforePath="$PROJECT_DIR$/.idea/GRU.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GRU.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +139,8 @@
       <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/grpc/grpc" />
+      <path value="$PROJECT_DIR$/vendor/google/protobuf" />
     </include_path>
   </component>
   <component name="ProjectId" id="29Gm6euiBOQ2hHUl502nnAMtEN9" />
@@ -163,6 +168,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Uni\Tilin Progre\GRU\resources\lang" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Uni\Tilin Progre\GRU\services" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -182,7 +190,7 @@
       <workItem from="1653591735162" duration="5228000" />
       <workItem from="1653698088302" duration="744000" />
       <workItem from="1653953183215" duration="78000" />
-      <workItem from="1654205917639" duration="458000" />
+      <workItem from="1654205917639" duration="1768000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652748689190</created>
@@ -205,7 +213,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653953196207</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[FIX] All">
+      <created>1654206483969</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654206483969</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[UPD] Services">
+      <created>1654206583766</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654206583766</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +248,8 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="[ADD] Login service" />
     <MESSAGE value="[ADD] Register service" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Register service" />
+    <MESSAGE value="[FIX] All" />
+    <MESSAGE value="[UPD] Services" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPD] Services" />
   </component>
 </project>

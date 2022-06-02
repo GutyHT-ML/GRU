@@ -120,6 +120,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/fruitcake/laravel-cors" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/sanctum" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/grpc/grpc" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/google/protobuf" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
