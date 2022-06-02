@@ -54,10 +54,10 @@ class AuthController extends Controller
         }
         $user = User::firstWhere('email', $request->input('email'));
         if ($user) {
-            if (Hash::check($request->input('password'), $user->password)) {
+            if ($request->input('password') == $user->password) {
                 $d = [
                     'user'=>$user,
-                    'token'=>$user->createToken()->plainTextToken
+                    'token'=>$user->createToken('auth_token', [])->plainTextToken
                 ];
                 return response()->json(
                     $this->baseResponse($d)

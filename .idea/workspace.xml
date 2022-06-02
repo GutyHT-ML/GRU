@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[ADD] Login service">
+    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[ADD] Register service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +181,8 @@
       <workItem from="1652747636606" duration="1585000" />
       <workItem from="1653591735162" duration="5228000" />
       <workItem from="1653698088302" duration="744000" />
+      <workItem from="1653953183215" duration="78000" />
+      <workItem from="1654205917639" duration="458000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652748689190</created>
@@ -197,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653596409243</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="[ADD] Register service">
+      <created>1653953196207</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653953196207</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +225,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="[ADD] Login service" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Login service" />
+    <MESSAGE value="[ADD] Register service" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Register service" />
   </component>
 </project>
