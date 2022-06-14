@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController as userController;
-use App\Http\Controllers\AuthController as authController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/auth/login', [authController::class, 'login']);
+Route::post('auth/login', [AuthController::class, 'login']);
 
-Route::post('/auth/signup', [authController::class, 'signup']);
+Route::post('auth/signup', [AuthController::class, 'signup']);
 
-Route::resource('/user', 'UserController')->middleware(['auth:sanctum']);
+Route::apiResource('user', UserController::class)
+    ->middleware(['auth:sanctum', "abilities:gru:create,gru:read,gru:update,gru:delete"]);
+
+Route::apiResource('role', RoleController::class)
+    ->middleware(['auth:sanctum', "abilities:gru:create,gru:read,gru:update,gru:delete"]);

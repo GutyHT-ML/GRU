@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
@@ -55,9 +56,10 @@ class AuthController extends Controller
         $user = User::firstWhere('email', $request->input('email'));
         if ($user) {
             if ($request->input('password') == $user->password) {
+                $abs = Role::getAbilities($user->role->getKey());
                 $d = [
                     'user'=>$user,
-                    'token'=>$user->createToken('auth_token', [])->plainTextToken
+                    'token'=>$user->createToken('auth_token', $abs)->plainTextToken
                 ];
                 return response()->json(
                     $this->baseResponse($d)
@@ -66,6 +68,12 @@ class AuthController extends Controller
             return response()->json($this->unauthorizedResponse());
         }
         return response()->json($this->unauthorizedResponse());
+    }
+
+    function console_log( $data ){
+        echo '<script>';
+        echo 'console.log('. json_encode( $data ) .')';
+        echo '</script>';
     }
 
     /**

@@ -2,7 +2,12 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\isGru;
+use App\Http\Middleware\isMinion;
+use App\Http\Middleware\isNefario;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Laravel\Sanctum\Http\Middleware\CheckAbilities;
+use Laravel\Sanctum\Http\Middleware\CheckForAnyAbility;
 
 class Kernel extends HttpKernel
 {
@@ -62,5 +67,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'abilities' => CheckAbilities::class,
+        'ability' => CheckForAnyAbility::class,
+        'gru' => isGru::class,
+        'minion'=> isMinion::class,
+        'nefario' => isNefario::class
     ];
 }
