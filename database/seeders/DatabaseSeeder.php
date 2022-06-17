@@ -33,5 +33,13 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
+        DB::table('users')->insert(
+            [
+                'name'=>'JairGay',
+                'email'=>'jair@gru.com',
+                'password'=>'123',
+                'role_id'=>'3'
+            ]
+        );
     }
 }
