@@ -15,7 +15,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function baseResponse ($data): JsonResponse
+    public static function baseResponse ($data): JsonResponse
     {
         return response()->json(
             [
@@ -27,7 +27,7 @@ class Controller extends BaseController
         );
     }
 
-    public function notAllowed (): JsonResponse
+    public static function notAllowed (): JsonResponse
     {
         return response()->json([
             'status'=>false,
@@ -36,7 +36,7 @@ class Controller extends BaseController
         ], 403);
     }
 
-    public function badRequest ($msg = 'Error!'): JsonResponse
+    public static function badRequest ($msg = 'Error!'): JsonResponse
     {
 
         return response()->json([
@@ -46,7 +46,7 @@ class Controller extends BaseController
         ], 400);
     }
 
-    public function unauthorizedResponse (): JsonResponse
+    public static function unauthorizedResponse (): JsonResponse
     {
         return response()->json([
             'status' => false,

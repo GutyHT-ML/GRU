@@ -52,9 +52,7 @@ class Role extends Model implements ResourceModel
     ];
 
     public static $gruAbilities = [
-        'gru:create', 'gru:read', 'gru:update', 'gru:delete',
-        'nefario:create', 'nefario:read', 'nefario:update', 'nefario:delete',
-        'minion:read', 'minion:update'
+        'gru:create', 'gru:read', 'gru:update', 'gru:delete'
     ];
 
     static function getIndexData(): array

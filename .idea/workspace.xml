@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[UPD] Seeders">
+    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[UPD] Indicators index and update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ResourceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ResourceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/RoleSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/isGru.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/isMinion.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/isNefario.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -209,7 +211,7 @@
       <workItem from="1655424278642" duration="321000" />
       <workItem from="1655836176145" duration="1000" />
       <workItem from="1656376313580" duration="4454000" />
-      <workItem from="1656462946356" duration="791000" />
+      <workItem from="1656462946356" duration="3814000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652748689190</created>
@@ -274,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655424508856</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="[UPD] Indicators index and update">
+      <created>1656464054172</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1656464054172</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +310,7 @@
     <MESSAGE value="[ADD] Pudrete Jair" />
     <MESSAGE value="[ADD] Insomnia services" />
     <MESSAGE value="[UPD] Seeders" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPD] Seeders" />
+    <MESSAGE value="[UPD] Indicators index and update" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPD] Indicators index and update" />
   </component>
 </project>

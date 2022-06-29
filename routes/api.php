@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,11 +27,13 @@ Route::post('auth/login', [AuthController::class, 'login']);
 
 Route::post('auth/signup', [AuthController::class, 'signup']);
 
-Route::apiResource('user', UserController::class)
-    ->middleware(['auth:sanctum', "abilities:gru:create,gru:read,gru:update,gru:delete"]);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::apiResource('user', UserController::class)
+        ->middleware('role:'.Role::$gru);
 
-Route::apiResource('role', RoleController::class)
-    ->middleware(['auth:sanctum', "abilities:gru:create,gru:read,gru:update,gru:delete"]);
+    Route::apiResource('role', RoleController::class)
+        ->middleware("role:".Role::$gru);
 
-Route::apiResource('indicator', \App\Http\Controllers\IndicatorController::class)
-    ->middleware(['auth:sanctum', 'abilities:gru:create,gru:read,gru:update,gru:delete']);
+    Route::apiResource('indicator', IndicatorController::class)
+        ->middleware(['roleOrSuperior:'.Role::$nefario]);
+});

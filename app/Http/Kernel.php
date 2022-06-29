@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\HasRole;
+use App\Http\Middleware\HasRoleOrSuperior;
 use App\Http\Middleware\isGru;
 use App\Http\Middleware\isMinion;
 use App\Http\Middleware\isNefario;
@@ -69,8 +71,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'abilities' => CheckAbilities::class,
         'ability' => CheckForAnyAbility::class,
-        'gru' => isGru::class,
-        'minion'=> isMinion::class,
-        'nefario' => isNefario::class
+        'role'=>HasRole::class,
+        'roleOrSuperior'=>HasRoleOrSuperior::class
     ];
 }
