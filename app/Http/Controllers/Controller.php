@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -14,31 +15,44 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function baseResponse ($data): array
+    public function baseResponse ($data): JsonResponse
     {
-        return [
-            'status'=>true,
-            'msg'=>'Hecho!',
-            'data'=>$data
-        ];
+        return response()->json(
+            [
+                'status'=>true,
+                'msg'=>'Hecho!',
+                'data'=>$data
+            ],
+            200
+        );
     }
 
-    public function badRequest ($msg): array
+    public function notAllowed (): JsonResponse
     {
-        return [
+        return response()->json([
             'status'=>false,
-            'msg'=>'Error!',
-            'data'=>$msg
-        ];
+            'msg'=>'Accion no peritida',
+            'data'=>null
+        ], 403);
     }
 
-    public function unauthorizedResponse (): array
+    public function badRequest ($msg = 'Error!'): JsonResponse
     {
-        return [
+
+        return response()->json([
+            'status'=>false,
+            'msg'=>$msg,
+            'data'=>null
+        ], 400);
+    }
+
+    public function unauthorizedResponse (): JsonResponse
+    {
+        return response()->json([
             'status' => false,
             'msg' => 'Acceso no autorizado',
             'data' => null
-        ];
+        ], 401);
     }
 
     /**

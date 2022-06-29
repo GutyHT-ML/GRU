@@ -61,19 +61,11 @@ class AuthController extends Controller
                     'user'=>$user,
                     'token'=>$user->createToken('auth_token', $abs)->plainTextToken
                 ];
-                return response()->json(
-                    $this->baseResponse($d)
-                );
+                return $this->baseResponse($d);
             }
-            return response()->json($this->unauthorizedResponse());
+            return $this->unauthorizedResponse();
         }
-        return response()->json($this->unauthorizedResponse());
-    }
-
-    function console_log( $data ){
-        echo '<script>';
-        echo 'console.log('. json_encode( $data ) .')';
-        echo '</script>';
+        return $this->unauthorizedResponse();
     }
 
     /**

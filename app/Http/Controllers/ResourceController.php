@@ -19,7 +19,7 @@ abstract class ResourceController extends Controller
     public function index(): JsonResponse
     {
         $index = $this->getModel()::all();
-        return response()->json($this->baseResponse($index));
+        return $this->baseResponse($index);
     }
 
     /**
@@ -32,7 +32,7 @@ abstract class ResourceController extends Controller
     {
         $requestData = $request->only($this->getModel()::getStoreData());
         $instance = $this->getModel()::create($requestData);
-        return response()->json($this->baseResponse($instance));
+        return $this->baseResponse($instance);
     }
 
     /**
@@ -44,7 +44,7 @@ abstract class ResourceController extends Controller
     public function show(int $id): JsonResponse
     {
         $instance = $this->getModel()::find($id);
-        return response()->json($this->baseResponse($instance));
+        return $this->baseResponse($instance);
     }
 
     /**
@@ -59,7 +59,7 @@ abstract class ResourceController extends Controller
         $requestData = $request->only($this->getModel()::getUpdateData());
         $instance = $this->getModel()::find($id);
         $instance->update($requestData);
-        return response()->json($this->baseResponse($instance));
+        return $this->baseResponse($instance);
     }
 
     /**
@@ -76,7 +76,7 @@ abstract class ResourceController extends Controller
         } else {
             $instance->delete();
         }
-        return response()->json($this->baseResponse($instance));
+        return $this->baseResponse($instance);
     }
 
 }

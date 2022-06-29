@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Indicator;
+use Carbon\Carbon;
+use Carbon\Traits\Date;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -39,6 +42,38 @@ class DatabaseSeeder extends Seeder
                 'email'=>'jair@gru.com',
                 'password'=>'123',
                 'role_id'=>'3'
+            ]
+        );
+
+        $date = Carbon::now('UTC')->addMonths(1);
+
+        DB::table('indicators')->insert(
+            [
+                [
+                    'name'=>'Puntaje minimo',
+                    'value'=>5,
+                    'type'=>Indicator::$MIN_NUM
+                ],
+                [
+                    'name'=>'Puntaje maximo',
+                    'value'=>100,
+                    'type'=>Indicator::$MAX_NUM
+                ]
+            ]
+        );
+
+        DB::table('indicators')->insert(
+            [
+                [
+                    'name'=>'Fecha de apertura',
+                    'date'=>$date->toDate(),
+                    'type'=> Indicator::$MIN_DATE
+                ],
+                [
+                    'name'=>'Fecha de cierre',
+                    'date'=>$date->toDate(),
+                    'type'=>Indicator::$MAX_DATE
+                ]
             ]
         );
     }

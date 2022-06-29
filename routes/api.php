@@ -30,3 +30,6 @@ Route::apiResource('user', UserController::class)
 
 Route::apiResource('role', RoleController::class)
     ->middleware(['auth:sanctum', "abilities:gru:create,gru:read,gru:update,gru:delete"]);
+
+Route::apiResource('indicator', \App\Http\Controllers\IndicatorController::class)
+    ->middleware(['auth:sanctum', 'abilities:gru:create,gru:read,gru:update,gru:delete']);
