@@ -36,4 +36,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::apiResource('indicator', IndicatorController::class)
         ->middleware(['roleOrSuperior:'.Role::$nefario]);
+
+    Route::apiResource('nefario-minion', \App\Http\Controllers\NefarioMinionController::class)
+        ->middleware(['roleOrSuperior:'.Role::$nefario]);
 });

@@ -68,7 +68,7 @@ abstract class ResourceController extends Controller
      * @param int $id
      * @return JsonResponse
      */
-    public function destroy(int $id): JsonResponse
+    public function destroy(Request $request, int $id): JsonResponse
     {
         $instance = $this->getModel()::withTrashed()->find($id);
         if ($instance->trashed()) {
@@ -78,5 +78,4 @@ abstract class ResourceController extends Controller
         }
         return $this->baseResponse($instance);
     }
-
 }

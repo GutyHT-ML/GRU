@@ -20,28 +20,40 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         DB::table('roles')->insert(
             [
-                'name'=>'minion'
+                [
+                    'name'=>'minion'
+                ],
+                [
+                    'name'=>'nefario'
+                ],
+                [
+                    'name'=>'gru'
+                ]
             ]
         );
 
-        DB::table('roles')->insert(
-            [
-                'name'=>'nefario'
-            ]
-        );
 
-        DB::table('roles')->insert(
-            [
-                'name'=>'gru'
-            ]
-        );
 
         DB::table('users')->insert(
             [
-                'name'=>'JairGay',
-                'email'=>'jair@gru.com',
-                'password'=>'123',
-                'role_id'=>'3'
+                [
+                    'name'=>'JairGay',
+                    'email'=>'jair@gru.com',
+                    'password'=>'123',
+                    'role_id'=>'3'
+                ],
+                [
+                    'name'=>'Alex',
+                    'email'=>'alex@gru.com',
+                    'password'=>'123',
+                    'role_id'=>1
+                ],
+                [
+                    'name'=>'Saske',
+                    'email'=>'saske@gru.com',
+                    'password'=>'123',
+                    'role_id'=>2
+                ]
             ]
         );
 

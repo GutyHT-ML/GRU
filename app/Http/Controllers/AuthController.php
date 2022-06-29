@@ -25,7 +25,7 @@ class AuthController extends Controller
             'username' => 'required|string'
         ]);
         if ($validator->fails()) {
-            return response()->json($this->badRequest($validator->errors()));
+            return $this->badRequest($validator->errors());
         }
         $user = User::create([
             'name'=>$request->input('username'),
@@ -33,9 +33,9 @@ class AuthController extends Controller
             'password'=>$request->input('password')
         ]);
         if ($user) {
-            return response()->json($this->baseResponse($user));
+            return $this->baseResponse($user);
         }
-        return response()->json($this->badRequest([]));
+        return $this->badRequest();
     }
 
     /**

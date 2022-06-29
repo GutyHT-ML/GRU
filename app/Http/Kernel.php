@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\HasOwnerOrAdmin;
 use App\Http\Middleware\HasRole;
 use App\Http\Middleware\HasRoleOrSuperior;
 use App\Http\Middleware\isGru;
@@ -72,6 +73,7 @@ class Kernel extends HttpKernel
         'abilities' => CheckAbilities::class,
         'ability' => CheckForAnyAbility::class,
         'role'=>HasRole::class,
-        'roleOrSuperior'=>HasRoleOrSuperior::class
+        'roleOrSuperior'=>HasRoleOrSuperior::class,
+        'owner'=>HasOwnerOrAdmin::class
     ];
 }
