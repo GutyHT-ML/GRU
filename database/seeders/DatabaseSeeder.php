@@ -88,5 +88,18 @@ class DatabaseSeeder extends Seeder
                 ]
             ]
         );
+
+        DB::table('categories')->insert(
+            [
+                [
+                    'name'=>'No fue al jale',
+                    'points'=>-50
+                ],
+                [
+                    'name'=>'Si fue al jale',
+                    'points'=>50
+                ]
+            ]
+        );
     }
 }

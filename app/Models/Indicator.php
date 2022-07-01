@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Validation\Rule;
 
 class Indicator extends Model implements ResourceModel
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = ['name', 'date', 'value', 'type'];
 
     public static $MIN_DATE = 'min_date';
     public static $MAX_DATE = 'max_date';
@@ -26,18 +30,18 @@ class Indicator extends Model implements ResourceModel
     static function getStoreData(): array
     {
         return [
-            'value',
-            'date',
-            'type',
-            'name',
+            'value'=>'required_without:date|integer',
+            'date'=>'required_without:value|date',
+            'type'=>['required', 'string', Rule::in(Indicator::TYPES())],
+            'name'=>'string|unique:indicators',
         ];
     }
 
     static function getUpdateData(): array
     {
         return [
-            'value',
-            'date'
+            'value'=>'required_without:date|integer',
+            'date'=>'required_without:value|date'
         ];
     }
 

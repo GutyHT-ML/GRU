@@ -33,7 +33,7 @@ class Controller extends BaseController
             'status'=>false,
             'msg'=>'Accion no peritida',
             'data'=>null
-        ], 403);
+        ], 405);
     }
 
     public static function badRequest ($msg = 'Error!'): JsonResponse
@@ -52,7 +52,7 @@ class Controller extends BaseController
             'status' => false,
             'msg' => 'Acceso no autorizado',
             'data' => null
-        ], 401);
+        ], 403);
     }
 
     /**

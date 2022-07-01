@@ -13,9 +13,4 @@ class UserController extends ResourceController
     {
         return 'App\Models\User';
     }
-
-    public function update(Request $request, int $id): JsonResponse
-    {
-//        return parent::update($request, $id);
-    }
 }

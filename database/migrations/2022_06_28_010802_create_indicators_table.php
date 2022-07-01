@@ -14,11 +14,12 @@ class CreateIndicatorsTable extends Migration
     public function up()
     {
         Schema::create('indicators', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name')->unique()->nullable(false);
             $table->string('type')->nullable(false);
             $table->integer('value')->nullable();
             $table->date('date')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\IndicatorController;
+use App\Http\Controllers\NefarioMinionController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TracingController;
 use App\Http\Controllers\UserController;
 use App\Models\Role;
 use Illuminate\Http\Request;
@@ -37,6 +40,12 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('indicator', IndicatorController::class)
         ->middleware(['roleOrSuperior:'.Role::$nefario]);
 
-    Route::apiResource('nefario-minion', \App\Http\Controllers\NefarioMinionController::class)
+    Route::apiResource('nefario-minion', NefarioMinionController::class)
+        ->middleware(['roleOrSuperior:'.Role::$nefario]);
+
+    Route::apiResource('category', CategoryController::class)
+        ->middleware(['roleOrSuperior:'.Role::$nefario]);
+
+    Route::apiResource('tracings', TracingController::class)
         ->middleware(['roleOrSuperior:'.Role::$nefario]);
 });

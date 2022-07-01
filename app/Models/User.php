@@ -25,7 +25,7 @@ class User extends Authenticatable implements ResourceModel
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','role_id'
     ];
 
     /**
@@ -37,6 +37,11 @@ class User extends Authenticatable implements ResourceModel
         'password', 'remember_token',
     ];
 
+    public function tracings(): HasMany
+    {
+        return $this->hasMany(Tracing::class);
+    }
+
     public function role() : BelongsTo {
         return $this->belongsTo(Role::class);
     }
@@ -44,7 +49,7 @@ class User extends Authenticatable implements ResourceModel
     public function nefarios(): BelongsToMany {
         return $this->belongsToMany(
             User::class,
-            'nefario_minion',
+            'nefario_minions',
             'minion_id',
             'nefario_id',
             'id',
@@ -55,7 +60,7 @@ class User extends Authenticatable implements ResourceModel
     public function minions(): BelongsToMany {
         return $this->belongsToMany(
             User::class,
-            'nefario_minion',
+            'nefario_minions',
             'nefario_id',
             'minion_id',
             'id',
@@ -79,12 +84,12 @@ class User extends Authenticatable implements ResourceModel
 
     static function getStoreData(): array
     {
-        return ['name', 'email', 'password'];
+        return ['name'=>'required|string', 'email'=>'required|email', 'password'=>'required|string'];
     }
 
     static function getUpdateData(): array
     {
-        return ['name', 'email'];
+        return ['name'=>'required|string', 'email'=>'required|email', 'role_id'=>'required|integer|exists:roles,id'];
     }
 
     static function getDeleteData(): array

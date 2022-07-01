@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,10 +14,11 @@ class CreateNefarioMinionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('nefario_minion', function (Blueprint $table) {
-            $table->increments('id');
-            $table->foreignIdFor(\App\Models\User::class, 'minion_id')->nullable(false);
-            $table->foreignIdFor(\App\Models\User::class, 'nefario_id')->nullable(false);
+        Schema::create('nefario_minions', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->foreignIdFor(User::class, 'minion_id')->constrained('users');
+            $table->foreignIdFor(User::class, 'nefario_id')->constrained('users');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

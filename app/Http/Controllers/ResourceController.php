@@ -30,7 +30,11 @@ abstract class ResourceController extends Controller
      */
     public function store(Request $request): JsonResponse
     {
-        $requestData = $request->only($this->getModel()::getStoreData());
+        $validation = $this->validate($request, $this->getModel()::getStoreData());
+        if ($validation->fails()) {
+            return self::badRequest($validation->errors());
+        }
+        $requestData = $request->only(array_keys($this->getModel()::getStoreData()));
         $instance = $this->getModel()::create($requestData);
         return $this->baseResponse($instance);
     }
@@ -56,7 +60,11 @@ abstract class ResourceController extends Controller
      */
     public function update(Request $request, int $id): JsonResponse
     {
-        $requestData = $request->only($this->getModel()::getUpdateData());
+        $validation = $this->validate($request, $this->getModel()::getUpdateData());
+        if ($validation->fails()) {
+            return self::badRequest($validation->errors());
+        }
+        $requestData = $request->only(array_keys($this->getModel()::getUpdateData()));
         $instance = $this->getModel()::find($id);
         $instance->update($requestData);
         return $this->baseResponse($instance);

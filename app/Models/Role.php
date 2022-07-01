@@ -63,14 +63,14 @@ class Role extends Model implements ResourceModel
     static function getStoreData(): array
     {
         return [
-            'name'
+            'name'=>'required|string'
         ];
     }
 
     static function getUpdateData(): array
     {
         return [
-            'name'
+            'name'=>'required|string'
         ];
     }
 
