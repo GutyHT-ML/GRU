@@ -28,6 +28,16 @@ class User extends Authenticatable implements ResourceModel
         'name', 'email', 'password','role_id'
     ];
 
+
+    /**
+     * The relationships that are always loaded
+     *
+     * @var string[]
+     */
+    protected $with = [
+        'role', 'minions', 'nefarios', 'tracings'
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
