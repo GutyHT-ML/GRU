@@ -14,6 +14,8 @@ class NefarioMinion extends Pivot implements ResourceModel
 
     protected $fillable = ['minion_id', 'nefario_id'];
 
+    protected $with = ['minion', 'nefario'];
+
     public function minion(): HasOne {
         return $this->hasOne(User::class, 'id', 'minion_id');
     }

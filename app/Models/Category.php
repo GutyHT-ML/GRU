@@ -10,7 +10,7 @@ class Category extends Model implements ResourceModel
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'points'];
+    protected $fillable = ['name', 'points', 'is_decrement'];
 
     function tracings(): HasMany
     {
@@ -26,13 +26,14 @@ class Category extends Model implements ResourceModel
     {
         return [
             'name' => 'required|string',
-            'points' => 'required|integer'
+            'points' => 'required|integer',
+            'is_decrement' =>'required|boolean'
         ];
     }
 
     static function getUpdateData(): array
     {
-        return ['name' => 'required|string'];
+        return ['name' => 'required|string', 'points'=>'required|integer', 'is_decrement'=>'required|boolean'];
     }
 
     static function getDeleteData(): array
