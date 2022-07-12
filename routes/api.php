@@ -48,4 +48,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::apiResource('tracings', TracingController::class)
         ->middleware(['roleOrSuperior:'.Role::$nefario]);
+
+    Route::apiResource('tracing-history', \App\Http\Controllers\TracingHistoryController::class)
+        ->middleware(['roleOrSuperior:'.Role::$nefario]);
 });

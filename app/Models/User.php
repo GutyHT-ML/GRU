@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\TracingHistoryController;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -50,6 +51,11 @@ class User extends Authenticatable implements ResourceModel
     public function tracings(): HasMany
     {
         return $this->hasMany(Tracing::class);
+    }
+
+    public function tracingHistory(): HasMany
+    {
+        return $this->hasMany(TracingHistoryController::class);
     }
 
     public function role() : BelongsTo {

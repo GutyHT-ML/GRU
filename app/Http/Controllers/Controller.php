@@ -31,7 +31,7 @@ class Controller extends BaseController
     {
         return response()->json([
             'status'=>false,
-            'msg'=>'Accion no peritida',
+            'msg'=>'Accion no permitida',
             'data'=>null
         ], 405);
     }

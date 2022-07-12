@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[UPD] Relationships load">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/NefarioMinion.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/NefarioMinion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_01_201600_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_01_201600_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +213,7 @@
       <workItem from="1656702758057" duration="5910000" />
       <workItem from="1656778674766" duration="794000" />
       <workItem from="1656951945151" duration="2103000" />
+      <workItem from="1657586053050" duration="3966000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652748689190</created>
@@ -311,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656779461819</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="[UPD] Relationships load">
+      <created>1657586080001</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1657586080001</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
