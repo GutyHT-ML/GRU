@@ -15,12 +15,12 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public static function baseResponse ($data = null): JsonResponse
+    public static function baseResponse ($data = null, $msg = 'Hecho!'): JsonResponse
     {
         return response()->json(
             [
                 'status'=>true,
-                'msg'=>'Hecho!',
+                'msg'=>$msg,
                 'data'=>$data
             ],
             200

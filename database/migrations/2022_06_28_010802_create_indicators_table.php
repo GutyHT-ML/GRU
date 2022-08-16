@@ -18,7 +18,8 @@ class CreateIndicatorsTable extends Migration
             $table->string('name')->unique()->nullable(false);
             $table->string('type')->nullable(false);
             $table->integer('value')->nullable();
-            $table->date('date')->nullable();
+            $table->string('frequency')->nullable();
+            $table->dateTime('date')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

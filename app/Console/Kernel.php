@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+use App\Models\Indicator;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use function PHPUnit\Framework\at;
 
 class Kernel extends ConsoleKernel
 {
@@ -13,7 +15,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\TracingCron'
     ];
 
     /**
@@ -25,9 +27,21 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->call(function () {
-
-        });
+        $frequency = Indicator::firstWhere('type', Indicator::$FREQ);
+        $freq = 'everyMinute';
+        switch ($frequency->value) {
+            case 2:
+                $freq = 'everyTwoMinutes';
+                break;
+            case 5:
+                $freq = 'everyFiveMinutes';
+                break;
+            default:
+                $freq = 'everyMinute';
+                break;
+        }
+        $schedule->command('tracing:cron')
+            ->$freq();
     }
 
     /**

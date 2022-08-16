@@ -17,9 +17,24 @@ class Indicator extends Model implements ResourceModel
     public static $MAX_DATE = 'max_date';
     public static $MAX_NUM = 'max_numeric';
     public static $MIN_NUM = 'min_numeric';
+    public static $FREQ = 'frequency';
 
     public static function TYPES (): array {
-        return [self::$MIN_DATE, self::$MAX_DATE, self::$MAX_NUM, self::$MIN_NUM];
+        return [
+            self::$MIN_DATE,
+            self::$MAX_DATE,
+            self::$MAX_NUM,
+            self::$MIN_NUM,
+            self::$FREQ
+        ];
+    }
+
+    static function FREQUENCIES (): array {
+        return [
+            1,
+            2,
+            5
+        ];
     }
 
     static function getIndexData(): array

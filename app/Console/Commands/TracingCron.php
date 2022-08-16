@@ -1,39 +1,57 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Console\Commands;
 
 use App\Models\Indicator;
 use App\Models\Tracing;
 use App\Models\TracingHistory;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+use Illuminate\Console\Command;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
+use Ramsey\Collection\Collection;
 
-class TracingHistoryController extends ResourceController
+class TracingCron extends Command
 {
-    //
-    protected function getModel(): string
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'tracing:cron';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Command to iterate through tracings created during the defined period';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        return 'App\Models\TracingHistory';
+        parent::__construct();
     }
 
-    public function update(Request $request, int $id): JsonResponse
-    {
-        return self::notAllowed();
-    }
-
-    public function forceRun(Request $request): JsonResponse
+    /**
+     * Execute the console command.
+     *
+     * @return array
+     */
+    public function handle(): array
     {
         $frequency = Indicator::firstWhere('type', Indicator::$FREQ);
         $startDate = Indicator::firstWhere('type', Indicator::$MIN_DATE);
         $endDate = Indicator::firstWhere('type', Indicator::$MAX_DATE);
         $userTracings = DB::table('tracings')
             ->whereBetween('created_at', [
-                $startDate->date,
-                $endDate->date
+                    $startDate->date,
+                    $endDate->date
                 ]
             )
             ->get()
@@ -56,9 +74,9 @@ class TracingHistoryController extends ResourceController
         $endDate->date = Carbon::now()->addUnit('minute', $frequency->value);
         $endDate->save();
 
-        return self::baseResponse(
+        return [
             $history,
             'Nuevo periodo: '.$startDate->date.'-'.$endDate->date
-        );
+        ];
     }
 }

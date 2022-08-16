@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[UPD] Relationships load">
+    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[ADD] Tracing history">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TracingHistoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TracingHistoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Indicator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Indicator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_06_28_010802_create_indicators_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_06_28_010802_create_indicators_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +218,11 @@
       <workItem from="1656702758057" duration="5910000" />
       <workItem from="1656778674766" duration="794000" />
       <workItem from="1656951945151" duration="2103000" />
-      <workItem from="1657586053050" duration="3966000" />
+      <workItem from="1657586053050" duration="4268000" />
+      <workItem from="1658438045508" duration="600000" />
+      <workItem from="1659045809385" duration="14000" />
+      <workItem from="1659488325391" duration="853000" />
+      <workItem from="1660655114447" duration="13808000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652748689190</created>
@@ -320,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657586080001</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="[ADD] Tracing history">
+      <created>1657590352877</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1657590352877</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,6 +368,7 @@
     <MESSAGE value="[UPD] Nefario to minion relationship" />
     <MESSAGE value="[UPD] Validations, categories and tracings" />
     <MESSAGE value="[UPD] Relationships load" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPD] Relationships load" />
+    <MESSAGE value="[ADD] Tracing history" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Tracing history" />
   </component>
 </project>

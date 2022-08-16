@@ -43,21 +43,57 @@ class DatabaseSeeder extends Seeder
                     'role_id'=>'3'
                 ],
                 [
+                    'name'=>'Saske',
+                    'email'=>'saske@gru.com',
+                    'password'=>'123',
+                    'role_id'=>2
+                ],
+                [
+                    'name'=>'Humberto',
+                    'email'=>'humberto@gru.com',
+                    'password'=>'123',
+                    'role_id'=>2
+                ],
+                [
+                    'name'=>'Kappa',
+                    'email'=>'kappa@gru.com',
+                    'password'=>'123',
+                    'role_id'=>2
+                ],
+                [
+                    'name'=>'Huny',
+                    'email'=>'huny@gru.com',
+                    'password'=>'123',
+                    'role_id'=>2
+                ],
+                [
                     'name'=>'Alex',
                     'email'=>'alex@gru.com',
                     'password'=>'123',
                     'role_id'=>1
                 ],
                 [
-                    'name'=>'Saske',
-                    'email'=>'saske@gru.com',
+                    'name'=>'Ferni',
+                    'email'=>'ferni@gru.com',
                     'password'=>'123',
-                    'role_id'=>2
-                ]
+                    'role_id'=>1
+                ],
+                [
+                    'name'=>'Axel',
+                    'email'=>'axel@gru.com',
+                    'password'=>'123',
+                    'role_id'=>1
+                ],
+                [
+                    'name'=>'Fernando',
+                    'email'=>'fernando@gru.com',
+                    'password'=>'123',
+                    'role_id'=>1
+                ],
             ]
         );
 
-        $date = Carbon::now('UTC')->addMonths(1);
+        $date = Carbon::now('America/Mexico_City');
 
         DB::table('indicators')->insert(
             [
@@ -70,6 +106,11 @@ class DatabaseSeeder extends Seeder
                     'name'=>'Puntaje maximo',
                     'value'=>100,
                     'type'=>Indicator::$MAX_NUM
+                ],
+                [
+                    'name'=>'Periodo de tiempo',
+                    'value'=>1,
+                    'type'=>Indicator::$FREQ
                 ]
             ]
         );
@@ -78,12 +119,12 @@ class DatabaseSeeder extends Seeder
             [
                 [
                     'name'=>'Fecha de apertura',
-                    'date'=>$date->toDate(),
+                    'date'=>$date->toDateTime(),
                     'type'=> Indicator::$MIN_DATE
                 ],
                 [
                     'name'=>'Fecha de cierre',
-                    'date'=>$date->toDate(),
+                    'date'=>$date->addUnit('minute', 5)->toDateTime(),
                     'type'=>Indicator::$MAX_DATE
                 ]
             ]
