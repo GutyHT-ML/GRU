@@ -20,6 +20,16 @@ class TracingHistoryController extends ResourceController
         return 'App\Models\TracingHistory';
     }
 
+    public function store(Request $request): JsonResponse
+    {
+        return self::notAllowed();
+    }
+
+    public function destroy(Request $request, int $id): JsonResponse
+    {
+        return self::notAllowed();
+    }
+
     public function update(Request $request, int $id): JsonResponse
     {
         return self::notAllowed();
@@ -32,8 +42,8 @@ class TracingHistoryController extends ResourceController
         $endDate = Indicator::firstWhere('type', Indicator::$MAX_DATE);
         $userTracings = DB::table('tracings')
             ->whereBetween('created_at', [
-                $startDate->date,
-                $endDate->date
+                    $startDate->date,
+                    $endDate->date
                 ]
             )
             ->get()
@@ -46,7 +56,9 @@ class TracingHistoryController extends ResourceController
         foreach ($userTracings as $key => $value) {
             $th = TracingHistory::create([
                 'user_id'=>$key,
-                'tracings'=>$value
+                'tracing_ids'=>$value,
+                'period_start'=>$startDate->date,
+                'period_end'=>$endDate->date
             ]);
             $history[] = $th;
         }

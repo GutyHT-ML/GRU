@@ -45,7 +45,7 @@ class CategoryController extends ResourceController
             if ($data) {
                 $data->points = $requestData['points'];
                 $data->name = $requestData['name'];
-                $data->is_decrement = $requestData['is_decrement'];
+//                $data->is_decrement = $requestData['is_decrement'];
                 $data->save();
                 return self::baseResponse($data);
             }

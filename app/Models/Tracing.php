@@ -11,7 +11,7 @@ class Tracing extends Model implements ResourceModel
 {
     use HasFactory;
 
-    protected $fillable = ['description', 'user_id', 'category_id'];
+    protected $fillable = ['description', 'user_id', 'category_id', 'points'];
 
     function category(): BelongsTo
     {

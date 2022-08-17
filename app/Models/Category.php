@@ -10,7 +10,7 @@ class Category extends Model implements ResourceModel
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'points', 'is_decrement'];
+    protected $fillable = ['name', 'points'];
 
     function tracings(): HasMany
     {

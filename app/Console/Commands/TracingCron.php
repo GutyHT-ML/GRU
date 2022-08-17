@@ -64,7 +64,9 @@ class TracingCron extends Command
         foreach ($userTracings as $key => $value) {
             $th = TracingHistory::create([
                 'user_id'=>$key,
-                'tracings'=>$value
+                'tracing_ids'=>$value,
+                'period_start'=>$startDate->date,
+                'period_end'=>$endDate->date
             ]);
             $history[] = $th;
         }

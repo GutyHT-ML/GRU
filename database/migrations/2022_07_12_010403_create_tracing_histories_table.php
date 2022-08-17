@@ -16,7 +16,9 @@ class CreateTracingHistoriesTable extends Migration
         Schema::create('tracing_histories', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\User::class, 'user_id');
-            $table->json('tracings');
+            $table->json('tracing_ids');
+            $table->dateTime('period_start');
+            $table->dateTime('period_end');
             $table->timestamps();
             $table->softDeletes();
         });

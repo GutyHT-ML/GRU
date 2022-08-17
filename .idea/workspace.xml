@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[ADD] Tracing history">
+    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[ADD] Insomnia services">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/TracingCron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/TracingCron.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TracingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TracingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TracingHistoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TracingHistoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Indicator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Indicator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_06_28_010802_create_indicators_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_06_28_010802_create_indicators_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tracing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tracing.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/TracingHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TracingHistory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_01_201600_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_01_201600_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_01_201930_create_tracings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_01_201930_create_tracings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_12_010403_create_tracing_histories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_12_010403_create_tracing_histories_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +223,9 @@
       <workItem from="1658438045508" duration="600000" />
       <workItem from="1659045809385" duration="14000" />
       <workItem from="1659488325391" duration="853000" />
-      <workItem from="1660655114447" duration="13808000" />
+      <workItem from="1660655114447" duration="14691000" />
+      <workItem from="1660694548361" duration="636000" />
+      <workItem from="1660703872161" duration="1413000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652748689190</created>
@@ -336,7 +339,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657590352877</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="[ADD] Tracing history schedule">
+      <created>1660670665135</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1660670665135</updated>
+    </task>
+    <task id="LOCAL-00018" summary="[ADD] Insomnia services">
+      <created>1660670713285</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1660670713285</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +378,6 @@
     <MESSAGE value="[UPD] Services" />
     <MESSAGE value="[ADD] Sh*t for firestore" />
     <MESSAGE value="[ADD] Pudrete Jair" />
-    <MESSAGE value="[ADD] Insomnia services" />
     <MESSAGE value="[UPD] Seeders" />
     <MESSAGE value="[UPD] Indicators index and update" />
     <MESSAGE value="[UPD] Authentication responses" />
@@ -369,6 +385,8 @@
     <MESSAGE value="[UPD] Validations, categories and tracings" />
     <MESSAGE value="[UPD] Relationships load" />
     <MESSAGE value="[ADD] Tracing history" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Tracing history" />
+    <MESSAGE value="[ADD] Tracing history schedule" />
+    <MESSAGE value="[ADD] Insomnia services" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Insomnia services" />
   </component>
 </project>

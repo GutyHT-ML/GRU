@@ -16,6 +16,7 @@ class CreateTracingsTable extends Migration
         Schema::create('tracings', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('description');
+            $table->integer('points');
             $table->foreignIdFor(\App\Models\User::class)->constrained();
             $table->foreignIdFor(\App\Models\Category::class)->constrained();
             $table->softDeletes();
