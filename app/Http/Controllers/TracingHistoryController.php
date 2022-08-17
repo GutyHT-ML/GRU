@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\History;
 use App\Models\Indicator;
 use App\Models\Tracing;
 use App\Models\TracingHistory;
@@ -50,17 +51,16 @@ class TracingHistoryController extends ResourceController
             ->mapToGroups(function ($item, $key) {
                 return [$item->user_id=>$item->id];
             });
-//        return self::baseResponse($userTracings);
 
         $history = array();
         foreach ($userTracings as $key => $value) {
-            $th = TracingHistory::create([
+            $h = History::create([
                 'user_id'=>$key,
-                'tracing_ids'=>$value,
                 'period_start'=>$startDate->date,
                 'period_end'=>$endDate->date
             ]);
-            $history[] = $th;
+            $h->tracings()->syncWithoutDetaching($value);
+            $history[] = $h;
         }
         $d = Carbon::now();
         $startDate->date = $d;

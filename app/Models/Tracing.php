@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Tracing extends Model implements ResourceModel
@@ -12,6 +13,18 @@ class Tracing extends Model implements ResourceModel
     use HasFactory;
 
     protected $fillable = ['description', 'user_id', 'category_id', 'points'];
+
+    public function histories(): BelongsToMany {
+        return $this->belongsToMany(
+            Tracing::class,
+            'tracing_history',
+            'tracing_id',
+            'history_id',
+            'id',
+            'id'
+        )->using(TracingHistory::class);
+    }
+
 
     function category(): BelongsTo
     {

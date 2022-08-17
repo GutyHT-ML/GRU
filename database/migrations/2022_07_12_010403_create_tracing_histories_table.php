@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Tracing;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,12 +14,9 @@ class CreateTracingHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tracing_histories', function (Blueprint $table) {
+        Schema::create('tracing_history', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\User::class, 'user_id');
-            $table->json('tracing_ids');
-            $table->dateTime('period_start');
-            $table->dateTime('period_end');
+            $table->foreignIdFor(Tracing::class);
             $table->timestamps();
             $table->softDeletes();
         });

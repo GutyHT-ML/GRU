@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\NefarioMinionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TracingController;
+use App\Http\Controllers\TracingHistoryController;
 use App\Http\Controllers\UserController;
 use App\Models\Role;
 use Illuminate\Http\Request;
@@ -49,11 +51,13 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('tracings', TracingController::class)
         ->middleware(['roleOrSuperior:'.Role::$nefario]);
 
-    Route::apiResource('tracing-history', \App\Http\Controllers\TracingHistoryController::class)
+    Route::apiResource('tracing-history', TracingHistoryController::class)
         ->middleware(['roleOrSuperior:'.Role::$nefario]);
 
+    Route::apiResource('histories', HistoryController::class);
+
     Route::get('tracing-history-force', [
-        \App\Http\Controllers\TracingHistoryController::class,
+        TracingHistoryController::class,
         'forceRun'
     ]);
 });

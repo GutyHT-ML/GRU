@@ -4,18 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[ADD] Insomnia services">
+    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[ADD] Tracing history relationships">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/TracingCron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/TracingCron.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TracingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TracingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TracingHistoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TracingHistoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Tracing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tracing.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/TracingHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TracingHistory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_01_201600_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_01_201600_create_categories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_01_201930_create_tracings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_01_201930_create_tracings_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_12_010403_create_tracing_histories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_12_010403_create_tracing_histories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +221,7 @@
       <workItem from="1659488325391" duration="853000" />
       <workItem from="1660655114447" duration="14691000" />
       <workItem from="1660694548361" duration="636000" />
-      <workItem from="1660703872161" duration="1413000" />
+      <workItem from="1660703872161" duration="3227000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652748689190</created>
@@ -353,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660670713285</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="[ADD] Tracing history relationships">
+      <created>1660705520619</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1660705520619</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,6 +390,7 @@
     <MESSAGE value="[ADD] Tracing history" />
     <MESSAGE value="[ADD] Tracing history schedule" />
     <MESSAGE value="[ADD] Insomnia services" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Insomnia services" />
+    <MESSAGE value="[ADD] Tracing history relationships" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Tracing history relationships" />
   </component>
 </project>

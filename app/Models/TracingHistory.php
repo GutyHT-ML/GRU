@@ -6,30 +6,24 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Validation\Rule;
 
-class TracingHistory extends Model implements ResourceModel
+class TracingHistory extends Pivot implements ResourceModel
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'tracing_ids', 'period_start', 'period_end'];
+    protected $fillable = ['tracing_id', 'history_id'];
 
-    protected $with = ['user'];
-
-    protected $casts = [
-        'tracing_ids' => 'array'
-    ];
-
-    public function getTracingsAttribute(): Collection
+    public function tracing(): HasOne
     {
-        return Tracing::query()
-            ->whereIn('id', $this->tracing_ids)
-            ->get();
+        return $this->hasOne(Tracing::class);
     }
 
-    public function user(): BelongsTo
+    public function history(): HasOne
     {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(History::class);
     }
 
     static function getIndexData(): array
@@ -39,17 +33,7 @@ class TracingHistory extends Model implements ResourceModel
 
     static function getStoreData(): array
     {
-        return [
-            'user_id' =>[
-                'required',
-                'integer',
-                Rule::exists('users','id')->where(function($q) {
-                return $q->where('role_id', Role::$minion);
-            })],
-            'tracing_ids'=>'required|array',
-            'period_start'=>'required|date|before:period_end',
-            'period_end'=>'required|date|after:period_start'
-        ];
+        return [];
     }
 
     static function getUpdateData(): array
