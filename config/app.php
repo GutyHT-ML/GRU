@@ -67,6 +67,8 @@ return [
     |
     */
 
+    'schedule_timezone' => 'America/Mexico_City',
+
     'timezone' => 'America/Mexico_City',
 
     /*

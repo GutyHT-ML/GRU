@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[UPD] Migrations timezone">
+    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[UPD] Default timezone">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +219,7 @@
       <workItem from="1660694548361" duration="636000" />
       <workItem from="1660703872161" duration="3933000" />
       <workItem from="1660717410535" duration="3000" />
-      <workItem from="1660759790748" duration="1573000" />
+      <workItem from="1660759790748" duration="2495000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652748689190</created>
@@ -367,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660760390341</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="[UPD] Default timezone">
+      <created>1660761451744</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1660761451744</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,6 +412,7 @@
     <MESSAGE value="[ADD] Tracing history relationships" />
     <MESSAGE value="[FIX] Tracing History structure" />
     <MESSAGE value="[UPD] Migrations timezone" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPD] Migrations timezone" />
+    <MESSAGE value="[UPD] Default timezone" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPD] Default timezone" />
   </component>
 </project>

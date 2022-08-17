@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @param Schedule $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)
@@ -41,7 +41,19 @@ class Kernel extends ConsoleKernel
                 break;
         }
         $schedule->command('tracing:cron')
+            ->timezone('America/Mexico_City')
             ->$freq();
+
+    }
+
+    /**
+     * Get the timezone that should be used by default for scheduled events.
+     *
+     * @return string
+     */
+    protected function scheduleTimezone(): string
+    {
+        return 'America/Chicago';
     }
 
     /**
