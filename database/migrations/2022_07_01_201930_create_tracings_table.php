@@ -20,7 +20,7 @@ class CreateTracingsTable extends Migration
             $table->foreignIdFor(\App\Models\User::class)->constrained();
             $table->foreignIdFor(\App\Models\Category::class)->constrained();
             $table->softDeletes();
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

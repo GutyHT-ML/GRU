@@ -20,7 +20,7 @@ class CreateHistoriesTable extends Migration
             $table->foreignIdFor(User::class, 'user_id');
             $table->dateTime('period_start');
             $table->dateTime('period_end');
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
         Schema::table('tracing_history', function (Blueprint $table){

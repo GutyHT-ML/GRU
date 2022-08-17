@@ -17,7 +17,7 @@ class CreateTracingHistoriesTable extends Migration
         Schema::create('tracing_history', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Tracing::class);
-            $table->timestamps();
+            $table->timestampsTz();
             $table->softDeletes();
         });
     }
@@ -29,6 +29,6 @@ class CreateTracingHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tracing_histories');
+        Schema::dropIfExists('tracing_history');
     }
 }

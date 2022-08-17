@@ -19,7 +19,7 @@ class CreateNefarioMinionsTable extends Migration
             $table->foreignIdFor(User::class, 'minion_id')->constrained('users');
             $table->foreignIdFor(User::class, 'nefario_id')->constrained('users');
             $table->softDeletes();
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

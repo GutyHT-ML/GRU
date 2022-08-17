@@ -18,7 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->bigInteger('points');
             $table->softDeletes();
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

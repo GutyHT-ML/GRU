@@ -21,7 +21,7 @@ class CreateIndicatorsTable extends Migration
             $table->string('frequency')->nullable();
             $table->dateTime('date')->nullable();
             $table->softDeletes();
-            $table->timestamps();
+            $table->timestampsTz();
         });
     }
 

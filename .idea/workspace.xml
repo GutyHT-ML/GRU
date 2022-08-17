@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[ADD] Tracing history relationships">
+    <list default="true" id="1c21925e-f923-447a-b742-1ace7a672f99" name="Changes" comment="[FIX] Tracing History structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/TracingCron.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/TracingCron.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TracingHistoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TracingHistoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tracing.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tracing.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TracingHistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TracingHistory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_06_11_002654_create_roles_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_06_11_002654_create_roles_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_06_28_010802_create_indicators_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_06_28_010802_create_indicators_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_06_29_014417_create_nefario_minions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_06_29_014417_create_nefario_minions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_01_201600_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_01_201600_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_01_201930_create_tracings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_01_201930_create_tracings_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2022_07_12_010403_create_tracing_histories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_07_12_010403_create_tracing_histories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_08_16_220801_create_histories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2022_08_16_220801_create_histories_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +225,9 @@
       <workItem from="1659488325391" duration="853000" />
       <workItem from="1660655114447" duration="14691000" />
       <workItem from="1660694548361" duration="636000" />
-      <workItem from="1660703872161" duration="3227000" />
+      <workItem from="1660703872161" duration="3933000" />
+      <workItem from="1660717410535" duration="3000" />
+      <workItem from="1660759790748" duration="507000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652748689190</created>
@@ -356,7 +362,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660705520619</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="[FIX] Tracing History structure">
+      <created>1660707404286</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1660707404286</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,6 +404,7 @@
     <MESSAGE value="[ADD] Tracing history schedule" />
     <MESSAGE value="[ADD] Insomnia services" />
     <MESSAGE value="[ADD] Tracing history relationships" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Tracing history relationships" />
+    <MESSAGE value="[FIX] Tracing History structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FIX] Tracing History structure" />
   </component>
 </project>
