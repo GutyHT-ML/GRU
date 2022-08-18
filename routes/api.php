@@ -59,5 +59,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('tracing-history-force', [
         TracingHistoryController::class,
         'forceRun'
-    ])-> middleware(['roleOrSuperior'.Role::$nefario]);
+    ])-> middleware(['roleOrSuperior:'.Role::$nefario]);
 });

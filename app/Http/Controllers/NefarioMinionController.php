@@ -34,11 +34,13 @@ class NefarioMinionController extends ResourceController
     {
         $user = auth()->user();
         $inst = $this->getModel()::find($id);
-        if ($user->role->id == Role::$gru) {
-            return self::baseResponse($inst);
-        }
-        if ($inst->nefario_id == $user->id) {
-            return self::baseResponse($inst);
+        if ($inst) {
+            if ($user->role->id == Role::$gru) {
+                return self::baseResponse($inst);
+            }
+            if ($inst->nefario_id == $user->id) {
+                return self::baseResponse($inst);
+            }
         }
         return self::badRequest();
     }

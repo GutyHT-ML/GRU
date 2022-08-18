@@ -65,7 +65,7 @@ class User extends Authenticatable implements ResourceModel
     public function nefarios(): BelongsToMany {
         return $this->belongsToMany(
             User::class,
-            'nefario_minions',
+            'nefario_minion',
             'minion_id',
             'nefario_id',
             'id',
@@ -76,7 +76,7 @@ class User extends Authenticatable implements ResourceModel
     public function minions(): BelongsToMany {
         return $this->belongsToMany(
             User::class,
-            'nefario_minions',
+            'nefario_minion',
             'nefario_id',
             'minion_id',
             'id',
