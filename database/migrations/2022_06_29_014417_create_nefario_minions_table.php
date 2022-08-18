@@ -14,7 +14,7 @@ class CreateNefarioMinionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('nefario_minions', function (Blueprint $table) {
+        Schema::create('nefario_minion', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->foreignIdFor(User::class, 'minion_id')->constrained('users');
             $table->foreignIdFor(User::class, 'nefario_id')->constrained('users');
@@ -30,6 +30,7 @@ class CreateNefarioMinionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nefario_minions');
+        Schema::dropIfExists('nefatio_minions');
+        Schema::dropIfExists('nefario_minion');
     }
 }

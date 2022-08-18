@@ -45,21 +45,25 @@ class NefarioMinionController extends ResourceController
 
     public function store(Request $request): JsonResponse
     {
-        $requestData = $request->only($this->getModel()::getStoreData());
+        $requestData = $request->only(array_keys($this->getModel()::getStoreData()));
         if (array_key_exists('minion_id', $requestData)) {
             if (array_key_exists('nefario_id', $requestData)) {
                 $minionId = $requestData['minion_id'];
                 $nefarioId = $requestData['nefario_id'];
-                $minion = User::find($minionId);
-                $nefario = User::find($nefarioId);
-                if ($minion->role->id != Role::$minion) {
-                    return self::badRequest('Usuario minion invalido');
+                $user = auth()->user();
+                if ($user->id == $nefarioId || $user->role->id == Role::$gru) {
+                    $minion = User::find($minionId);
+                    $nefario = User::find($nefarioId);
+                    if ($minion->role->id != Role::$minion) {
+                        return self::badRequest('Usuario minion invalido');
+                    }
+                    if ($nefario->role->id != Role::$nefario) {
+                        return self::badRequest('Usuario nefario invalido');
+                    }
+                    $nefario->minions()->syncWithoutDetaching([$minionId]);
+                    return self::baseResponse($nefario->minions);
                 }
-                if ($nefario->role->id != Role::$nefario) {
-                    return self::badRequest('Usuario nefario invalido');
-                }
-                $nefario->minions()->syncWithoutDetaching([$minionId]);
-                return self::baseResponse($nefario->minions);
+                return self::badRequest('Usuario no valido');
             }
             return self::badRequest('Usuario nefario requerido');
         }

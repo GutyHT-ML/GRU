@@ -34,7 +34,7 @@ Route::post('auth/signup', [AuthController::class, 'signup']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('user', UserController::class)
-        ->middleware('role:'.Role::$gru);
+        ->middleware('roleOrSuperior:'.Role::$nefario);
 
     Route::apiResource('role', RoleController::class)
         ->middleware("role:".Role::$gru);
@@ -59,5 +59,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('tracing-history-force', [
         TracingHistoryController::class,
         'forceRun'
-    ]);
+    ])-> middleware(['roleOrSuperior'.Role::$nefario]);
 });

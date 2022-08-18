@@ -36,7 +36,7 @@ class User extends Authenticatable implements ResourceModel
      * @var string[]
      */
     protected $with = [
-        'role', 'minions', 'nefarios', 'tracings'
+        'role', 'tracings'
     ];
 
     /**
