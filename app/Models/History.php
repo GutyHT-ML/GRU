@@ -34,17 +34,21 @@ class History extends Model implements ResourceModel
 
     static function getIndexData(): array
     {
+        return [];
     }
 
     static function getStoreData(): array
     {
+        return [];
     }
 
     static function getUpdateData(): array
     {
+        return [];
     }
 
     static function getDeleteData(): array
     {
+        return [];
     }
 }

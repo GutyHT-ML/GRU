@@ -26,12 +26,12 @@ class TracingHistoryController extends ResourceController
         return self::notAllowed();
     }
 
-    public function destroy(Request $request, int $id): JsonResponse
+    public function update(Request $request, int $id): JsonResponse
     {
         return self::notAllowed();
     }
 
-    public function update(Request $request, int $id): JsonResponse
+    public function destroy(Request $request, int $id): JsonResponse
     {
         return self::notAllowed();
     }

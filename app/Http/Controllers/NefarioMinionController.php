@@ -45,6 +45,11 @@ class NefarioMinionController extends ResourceController
         return self::badRequest();
     }
 
+    public function update(Request $request, int $id): JsonResponse
+    {
+        return self::notAllowed();
+    }
+
     public function store(Request $request): JsonResponse
     {
         $requestData = $request->only(array_keys($this->getModel()::getStoreData()));
